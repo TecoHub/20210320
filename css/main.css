@@ -460,7 +460,10 @@ input[type="submit"]:focus {
 #english8:hover span {display:none}
 #english8:hover:before {content:"Non-alcoholic drinks"}**/
 
-
+.footer {
+    text-align: center;
+    
+}
 
 .bottomfooter {
     text-align: center;

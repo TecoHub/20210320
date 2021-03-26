@@ -4,7 +4,7 @@ session_start();
 if(isset($_SESSION['guestname']) and $_SESSION['guestname']!=""){
 include 'common/inc.common.php';
 
-$sql="select * from drinks ";
+$sql="select * from drinks order by menus,position";
  $dataarr = $Cobj->union($sql);
 
 //sited down
@@ -13,7 +13,6 @@ $sql="select * from drinks ";
 //header("Pragma: no-cache");
 //print_r($_SESSION);
 $tableno=$_SESSION['tableno'];
-
 $selectroom=$_SESSION['roomno'];
 $selectguest=$_SESSION['guestname'];
 
@@ -47,9 +46,7 @@ $selectguest=$_SESSION['guestname'];
     <!-- Latest compiled JavaScript -->
            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
 <script>
-function openbill(){
-alert();
-}
+
 </script>
     <title>Menu</title>
 
@@ -70,7 +67,7 @@ alert();
                            <div class="top-left-guest"><p><?php echo$_SESSION['guestname'];?></p></div>
                            
                            <!--Change User-->
-                           <area target="" alt="" title="" href="index.php" coords="220,10,281,62" shape="rect">
+                           <area target="" alt="" title="" href="index.php?goback=yes" coords="220,10,281,62" shape="rect">
 
                            <!--Home-->
                            <area target="" alt="" title="" href="menu01.php" coords="285,10,329,62" shape="rect">
@@ -725,11 +722,23 @@ document.getElementById('price'+pass).value= tot;//returns a HTML DOM Object
         
 </script>
 
+
+
+      <div class="footer">
+        
+        <hr class="solid">
+        <span style="color: #595143; font-size:8px"> ® <script type="text/javascript">
+                                         document.write(new Date().getFullYear());
+                                     </script> Yunokawa Prince Hotel Nagisatei • All Rights Reserved</span>
+        </div>
+  
 </body>  
  
 </html>
     <?php
-	}else{
+	if(isset($_GET['menuid'])){
+    echo "<script>openCity(event, '".$_GET['menuid']."')</script>";
+    }	}else{
 		header("Location: index.php");
 	}
 	?>

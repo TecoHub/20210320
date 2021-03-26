@@ -4,7 +4,15 @@ header('Content-Type: text/html; charset=utf-8');
 
 session_start();
 include 'common/inc.common.php';
+if(isset($_GET['goback'])){
+//$goback=$_GET['goback'];
+session_destroy();
+	unset($_SESSION['guestname']);
+	unset($_SESSION['tableno']);
+	unset($_SESSION['roomno']);
+	header("Location: index.php");
 
+}
 $sql="select * from discount where active=1";
  $disarr = $Cobj->union($sql);
 
@@ -13,8 +21,8 @@ $sql="select * from discount where active=1";
 //header("Cache-Control: post-check=0, pre-check=0", false);
 //header("Pragma: no-cache");
 
-        $r=$_GET['r'];
-$_SESSION['r']=$r;
+$r=$_GET['r'];
+
                 $api = "http://rest.yunokawapn.co.jp/res_t/get_dec.pl?r=$r";
                 $request = curl_init($api); // initiate curl object
                 curl_setopt($request, CURLOPT_HEADER, 0); // set to 0 to eliminate header info from response
@@ -31,7 +39,7 @@ $_SESSION['r']=$r;
 			   //print $result; //to check variables
 								//$response="12:333:vicky";
 
-			//$response="12:333,555,666:vicky,medihi,raghu"; 
+			//$response="12:333,555,666:vi,me,ra"; 
                 list($tableno, $roomno, $guestname) = explode(":" , $response);
 //print_r($roomno);			
 $tablenoarr=explode("," , $tableno);
