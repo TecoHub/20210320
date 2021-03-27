@@ -192,10 +192,16 @@ $selectguest=$_SESSION['guestname'];
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                                  
-                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-
-                                                                      </div>
+                                                                              <div class="element">
+                                                                                      <button class="buttonquantity button-minus">
+                                                                                          <img src="images/left-arrow.png" alt="">
+                                                                                      </button>
+                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
+                                                                                      <button class="buttonquantity button-plus">
+                                                                                         <img src="images/right-arrow.png" alt="">
+                                                                                      </button>
+                                                                              </div>
+                                                                      </div> 
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -208,7 +214,7 @@ $selectguest=$_SESSION['guestname'];
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
                                                                             
-                                                                                        <input type="button" class="roundedbuttonextra "  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
+                                                                                        <input type="button" class="roundedbuttonextra"  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
                                                                       
                                                                                     </div> 
                                                                           </div>
@@ -282,10 +288,16 @@ $selectguest=$_SESSION['guestname'];
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                                  
-                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-
-                                                                      </div>
+                                                                              <div class="element">
+                                                                                      <button class="buttonquantity button-minus">
+                                                                                          <img src="images/left-arrow.png" alt="">
+                                                                                      </button>
+                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
+                                                                                      <button class="buttonquantity button-plus">
+                                                                                         <img src="images/right-arrow.png" alt="">
+                                                                                      </button>
+                                                                              </div>
+                                                                      </div> 
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -298,7 +310,7 @@ $selectguest=$_SESSION['guestname'];
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
                                                                             
-                                                                                        <input type="button" class="roundedbuttonextra "  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
+                                                                                        <input type="button" class="roundedbuttonextra"  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
                                                                       
                                                                                     </div> 
                                                                           </div>
@@ -319,6 +331,7 @@ $selectguest=$_SESSION['guestname'];
                               ?>
 
         </div>
+
         
 <!----------------------------------Menu Items 3--------------------------------->
       <!--ビール　。ウイスキー　-->  
@@ -372,10 +385,16 @@ $selectguest=$_SESSION['guestname'];
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                                  
-                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-
-                                                                      </div>
+                                                                              <div class="element">
+                                                                                      <button class="buttonquantity button-minus">
+                                                                                          <img src="images/left-arrow.png" alt="">
+                                                                                      </button>
+                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
+                                                                                      <button class="buttonquantity button-plus">
+                                                                                         <img src="images/right-arrow.png" alt="">
+                                                                                      </button>
+                                                                              </div>
+                                                                      </div> 
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -388,7 +407,7 @@ $selectguest=$_SESSION['guestname'];
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
                                                                             
-                                                                                        <input type="button" class="roundedbuttonextra "  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
+                                                                                        <input type="button" class="roundedbuttonextra"  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
                                                                       
                                                                                     </div> 
                                                                           </div>
@@ -462,10 +481,16 @@ $selectguest=$_SESSION['guestname'];
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                                  
-                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-
-                                                                      </div>
+                                                                              <div class="element">
+                                                                                      <button class="buttonquantity button-minus">
+                                                                                          <img src="images/left-arrow.png" alt="">
+                                                                                      </button>
+                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
+                                                                                      <button class="buttonquantity button-plus">
+                                                                                         <img src="images/right-arrow.png" alt="">
+                                                                                      </button>
+                                                                              </div>
+                                                                      </div> 
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -478,7 +503,7 @@ $selectguest=$_SESSION['guestname'];
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
                                                                             
-                                                                                        <input type="button" class="roundedbuttonextra "  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
+                                                                                        <input type="button" class="roundedbuttonextra"  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
                                                                       
                                                                                     </div> 
                                                                           </div>
@@ -499,6 +524,7 @@ $selectguest=$_SESSION['guestname'];
                               ?>
 
         </div>
+
 <!----------------------------------Menu Items 5--------------------------------->
       <!--ワイン-->
         <div id="menu05" class="tabcontent" style="display: none;">
@@ -551,10 +577,16 @@ $selectguest=$_SESSION['guestname'];
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                                  
-                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-
-                                                                      </div>
+                                                                              <div class="element">
+                                                                                      <button class="buttonquantity button-minus">
+                                                                                          <img src="images/left-arrow.png" alt="">
+                                                                                      </button>
+                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
+                                                                                      <button class="buttonquantity button-plus">
+                                                                                         <img src="images/right-arrow.png" alt="">
+                                                                                      </button>
+                                                                              </div>
+                                                                      </div> 
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -567,7 +599,7 @@ $selectguest=$_SESSION['guestname'];
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
                                                                             
-                                                                                        <input type="button" class="roundedbuttonextra "  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
+                                                                                        <input type="button" class="roundedbuttonextra"  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
                                                                       
                                                                                     </div> 
                                                                           </div>
@@ -588,6 +620,7 @@ $selectguest=$_SESSION['guestname'];
                               ?>
 
         </div>
+
 
 <!----------------------------------Menu Items 6--------------------------------->
       <!--ソフトドリンク-->
@@ -642,10 +675,16 @@ $selectguest=$_SESSION['guestname'];
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                                  
-                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-
-                                                                      </div>
+                                                                              <div class="element">
+                                                                                      <button class="buttonquantity button-minus">
+                                                                                          <img src="images/left-arrow.png" alt="">
+                                                                                      </button>
+                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
+                                                                                      <button class="buttonquantity button-plus">
+                                                                                         <img src="images/right-arrow.png" alt="">
+                                                                                      </button>
+                                                                              </div>
+                                                                      </div> 
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -658,7 +697,7 @@ $selectguest=$_SESSION['guestname'];
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
                                                                             
-                                                                                        <input type="button" class="roundedbuttonextra "  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
+                                                                                        <input type="button" class="roundedbuttonextra"  value="Order" id="sub<?php echo $dataarr[$t]['d_refid'];?>"  onclick="checkout(<?php echo $dataarr[$t]['d_refid'];?>)">
                                                                       
                                                                                     </div> 
                                                                           </div>
@@ -679,6 +718,7 @@ $selectguest=$_SESSION['guestname'];
                               ?>
 
         </div>
+
         <!----------------------------------Menu Items end--------------------------------->
 
   </div>

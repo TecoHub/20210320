@@ -349,3 +349,36 @@ function openCity(evt, service) {
 
 
 
+const elements = document.querySelectorAll(".element");
+
+const commonFunction = (element) => {
+  const mainInput = element.querySelector(".quantity-field");
+  const bttnMinus = element.querySelector(".button-minus");
+  const bttnPlus = element.querySelector(".button-plus");
+  let count = mainInput.value;
+
+  const handlerMinus = (e) => {
+    if (count > 0) {
+      count--;
+      mainInput.value = count;
+    }
+  };
+
+  bttnMinus.addEventListener("click", handlerMinus);
+
+  const handlerPlus = (e) => {
+    count++;
+    mainInput.value = count;
+  };
+
+  bttnPlus.addEventListener("click", handlerPlus);
+
+  const handlerInput = (e) => {
+    e.target.value = e.target.value.replace(/[^\d]/g, "");
+    count = +event.target.value;
+  };
+
+  mainInput.addEventListener("input", handlerInput);
+};
+
+elements.forEach((element) => commonFunction(element));

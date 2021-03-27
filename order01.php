@@ -141,7 +141,7 @@ $sql="select * from confirmedorders where or_userid='$r' order by guestname";
  
  //".$dataarrord[$i]['tableno']." //if want to add table
  echo "<div class='roomname'> ".$dataarrord[$i]['roomno']."  ".$dataarrord[$i]['guestname']."</div>";
- echo" <tr class='blackhead'>		  <th>Name</th>	  <th>Qty</th> <th>Price</th>  </tr>";
+ echo" <tr class='blackhead'>		  <th>Name</th>	  <th style='width:10%'>Qty</th> <th style='width:30%'>Price</th>  </tr>";
 echo" <tr>		  <td>".$dataarrord[$i]['productname']."</td>	  <td>".$dataarrord[$i]['productquantity']."</td> <td>".$dataarrord[$i]['productprice']."</td>  </tr>";
 $total=$total+$tot;
  }
@@ -151,7 +151,7 @@ $total=$total+$tot;
 }
 if($dataarrord[$i+1]['guestname']!= $gn){
 
- echo" <tr>		  <td>Total</td>	  <td></td> <td>".$total.'円'."</td>  </tr>";
+ echo" <tr style='background-color:grey;'>		  <td style=';font-weight:900;'>合計金額</td>	  <td></td> <td>".$total.'円'."</td>  </tr>";
 echo" </table>";
 $total=0;
  }

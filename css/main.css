@@ -117,7 +117,7 @@ img {
   }
 
   .roundedbuttonextra {
-          background-color: #e98005; 
+    background-color: #e98005; 
     margin-top: 30px;
     border-radius: 80px;
     border: none;
@@ -656,3 +656,80 @@ input[type="submit"]:focus {
 
 /*******************************************************************************/
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: red;
+    padding: 50px 60px;
+    border-radius: 5px;
+    background: #161a1f;
+  }
+  
+  .title {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    max-width: 350px;
+  }
+  
+  .element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .buttonquantity {
+    background-color: #e3d3bf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    width: 38px;
+    position: relative;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+  }
+  
+  .quantity-field {
+    position: relative;
+    height: 38px;
+    text-align: center;
+    width: 62px;
+    display: inline-flex;
+    font-size: 18px;
+    margin: 0 10px;
+    resize: vertical;
+    font-family: "Oswald", sans-serif;
+    border-radius: 4px;
+    background: #fff;
+    color: #252525;
+  }
+  
+  /*Hide up and down for input number*/
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+  
