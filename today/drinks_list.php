@@ -112,35 +112,6 @@ $("#output1").html( html );
 	
 </script>
 
-<style> 
-
-.cubestyle { 
-
-width: 70px;
-height: 70px;
-
-}
-
-input {
-	margin: 2px 0 2px 0;
-}
-
-select {
-	margin: 2px 0 2px 0;
-}
-
-.topinputs {
-		background-color: #ecdfa8; 
-		padding:10px;
-		border-radius:5px;
-	}
-
-.marginright {
-	margin-right: 105px;
-}
-
-</style>
-
 
 <!DOCTYPE html>
 <html lang="ja" class="no-js">
@@ -170,60 +141,58 @@ select {
 
 		<form action="drink_listinfo.php" name="contactForm1"  id="contactForm1" method="POST"enctype="multipart/form-data" style="margin-left: 2%;">
 			<div id="main">
-			<h1>飲み物</h1>
+			<h1>Drinks</h1>
 
-			<h3 style="text-align: center;">管理</h3>
+		
 
 		<table>
-<tr><th><h4 class="topinputs"> 入力 1</h4></th><th></th><th><h4 class="topinputs">入力 2</h4></th></tr>
+<tr><th>Bottle</th><th></th><th>Glass</th></tr>
 		<tr>
-			<td>科目CD1</td> 
-			<td><input class="marginright" type="text" name="CD1" id="CD1" size="30" value="<?php echo$dataarr[0]['CD1'] ?>" required></td>
-			<td>科目CD1</td> 
-			<td><input type="text" name="CD1g" id="CD1g" size="30" value="<?php echo$dataarr[0]['glass_CID'] ?>" required></td>
+			<td>CD1</td> 
+			<td><input type="text" name="CD1" id="CD1" size="20" value="<?php echo$dataarr[0]['CD1'] ?>" required></td>
+			<td>CD1</td> 
+			<td><input type="text" name="CD1g" id="CD1g" size="20" value="<?php echo$dataarr[0]['glass_CID'] ?>" required></td>
 		
 		</tr>
 
 		<tr>
-		<td>科目CD2</td>
-		<td><input type="text" name="CD2" id="CD2" size="30" value="<?php echo$dataarr[0]['CD2'] ?>" required></td>
-		<td>科目CD2</td>
-		<td><input type="text" name="glass_CID2" id="glass_CID2" size="30" value="<?php echo$dataarr[0]['glass_CID2'] ?>" required></td>
+		<td>CD2</td>
+		<td><input type="text" name="CD2" id="CD2" size="20" value="<?php echo$dataarr[0]['CD2'] ?>" required></td>
+		<td>CD2</td>
+		<td><input type="text" name="glass_CID2" id="glass_CID2" size="20" value="<?php echo$dataarr[0]['glass_CID2'] ?>" required></td>
 		
 		</tr> 
 
 		<tr>
-			<td>科目名称</td> 
+			<td>Product name</td> 
 			<td><input type="text" name="product" id="product" size="30" value="<?php echo$dataarr[0]['product'] ?>" required></td>
-			<td>科目名称</td> 
-			<td><input type="text" name="product" id="product" size="30" value="<?php //new variable ?>" required></td>
 		</tr>
 		<tr>
-			<td> 単価 </td> 
-			<td><input type="number" name="price" id="price" size="30" value="<?php echo$dataarr[0]['price'] ?>" required> 
+			<td> Price </td> 
+			<td><input type="number" name="price" id="price" size="10" value="<?php echo$dataarr[0]['price'] ?>" required> 
 			</td>
-			<td> 単価 </td> 
+			<td> Price </td> 
 			<td><input type="number" name="glass_price" id="glass_price" size="10" value="<?php echo$dataarr[0]['glass_price'] ?>" required> 
 		</tr>
 
-	<!--	<tr>
-			<td> カテゴリー </td> 
+		<tr>
+			<td> Category </td> 
 			<td><input type="text" name="category" id="category" size="30" value="<?php echo$dataarr[0]['category'] ?>" required> </td>
-		</tr>-->
+		</tr>
 <tr>
-			<td> タイプ </td> 
+			<td> Bottle name </td> 
 			<td>
 <select name="bot_name" required>
-<option value="" <?php if($dataarr[0]['bot_name']==""){echo"selected";} ?>> 選択</option>
+<option value="" <?php if($dataarr[0]['bot_name']==""){echo"selected";} ?>> choose</option>
 <option value="Bottle" <?php if($dataarr[0]['bot_name']=="Bottle"){echo"selected";} ?>> Bottle</option>
 <option value="Shot" <?php if($dataarr[0]['bot_name']=="Shot"){echo"selected";} ?>> Shot</option>
 <option value="Glass" <?php if($dataarr[0]['bot_name']=="Glass"){echo"selected";} ?>> Glass</option>
 </select>
 			</td>
-			<td> タイプ </td> 
+			<td> Glass name </td> 
 			<td>
 <select name="gla_name" >
-<option value="" <?php if($dataarr[0]['gla_name']==""){echo"selected";} ?>> 選択</option>
+<option value="" <?php if($dataarr[0]['gla_name']==""){echo"selected";} ?>> choose</option>
 <option value="Bottle" <?php if($dataarr[0]['gla_name']=="Bottle"){echo"selected";} ?>> Bottle</option>
 <option value="Shot" <?php if($dataarr[0]['gla_name']=="Shot"){echo"selected";} ?>> Shot</option>
 <option value="Glass" <?php if($dataarr[0]['gla_name']=="Glass"){echo"selected";} ?>> Glass</option>
@@ -233,22 +202,26 @@ select {
 		</tr>
 
 <tr>
-			<td> Menu </td> 
+			<td> Menus </td> 
 			<td>
 <select name="menus" required onchange="get_position(this.value)">
-<option value="" <?php if($dataarr[0]['menus']==""){echo"selected";} ?>> 選択</option>
-<option value="1" <?php if($dataarr[0]['menus']=="1"){echo"selected";} ?>> 渚亭オリジナルボトル </option>
-<option value="2" <?php if($dataarr[0]['menus']=="2"){echo"selected";} ?>> 日本酒－焼酎　</option>
-<option value="3" <?php if($dataarr[0]['menus']=="3"){echo"selected";} ?>> ビール－ウィスキー　</option>
-<option value="4" <?php if($dataarr[0]['menus']=="4"){echo"selected";} ?>> サワー果実酒　</option>
-<option value="5" <?php if($dataarr[0]['menus']=="5"){echo"selected";} ?>> ワイン　</option>
-<option value="6" <?php if($dataarr[0]['menus']=="6"){echo"selected";} ?>> ソフトドリンク　</option>
+<option value="" <?php if($dataarr[0]['menus']==""){echo"selected";} ?>> choose</option>
+
+<option value="1" <?php if($dataarr[0]['menus']=="1"){echo"selected";} ?>> 1</option>
+
+<option value="2" <?php if($dataarr[0]['menus']=="2"){echo"selected";} ?>> 2</option>
+
+<option value="3" <?php if($dataarr[0]['menus']=="3"){echo"selected";} ?>> 3</option>
+
+<option value="4" <?php if($dataarr[0]['menus']=="4"){echo"selected";} ?>> 4</option>
+<option value="5" <?php if($dataarr[0]['menus']=="5"){echo"selected";} ?>> 5</option>
+<option value="6" <?php if($dataarr[0]['menus']=="6"){echo"selected";} ?>> 6</option>
 
 </select>
 			</td>
 		</tr>
 		<tr>
-			<td> 順番 </td> 
+			<td> position </td> 
 			<td>
 			<span id="output1" >
 				<input type="text" readonly name="position"value="<?php echo $dataarr[0]['position'];?>" class="form-control" style="
@@ -258,7 +231,7 @@ select {
 		</tr>
 
 		<tr>
-			<td> 在庫 </td> 
+			<td> stock </td> 
 			<td><select id="stock" name="stock" required>
 				<?php 
 				if ($dataarr[0]['stock']=='可用') { echo "<option selected='selected' value=" . $dataarr[0]['stock'] .">可用</option> <option value='品切れ'>品切れ</option>"; }
@@ -268,17 +241,16 @@ select {
 			</select></td>
 		</tr>
 
-	<!--	<tr>
+		<tr>
 			<td> Drink description </td> 
 			<td><input type="text" name="drinkinfo" id="drinkinfo" size="50" value="<?php echo$dataarr[0]['drinkinfo'] ?>" required> </td>
-		</tr>-->
+		</tr>
 
 		<tr>
-			<td> 画像 </td> 
-			<td> 
+			<td> Drink image </td> 
+			<td><input type="file" name="file" id="productimage" value="<?php echo $dataarr[0]['productimage'] ?>" > 
 			
-			<img style="border-radius: 8px; background-color:#ecdfa8; margin:20px 0 10px 0" id="previewing" src="../drinks/upload/<?php echo  $dataarr[0]['productimage']; ?>"  width="200px" height="150px">
-			<input type="file" name="file" id="productimage" value="<?php echo $dataarr[0]['productimage'] ?>" >
+			<img id="previewing" src="../drinks/upload/<?php echo  $dataarr[0]['productimage']; ?>"  width="150px" height="150px">
 				<br/> <br />
 				
 			</td>
@@ -296,8 +268,8 @@ select {
 
 		</table>
 				<div style="margin-top: 20px;">
-				<input class="cubestyle" type="submit" value="登録" name="but_upload"/>
-				<input class="cubestyle" type="button" onclick="loadContainer('../drinks/drinks_list.php','Filter student')" value='Refresh' />
+				<input type="submit" value="登録" name="but_upload"/>
+				<input type="button" onclick="loadContainer('../drinks/drinks_list.php','Filter student')" value='Refresh' />
 				</div>
 		</form>
 	 

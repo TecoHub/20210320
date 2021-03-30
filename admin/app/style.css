@@ -131,7 +131,18 @@
 	/***************************************************************************/
 
 
+	#previewing {
+		border-radius: 8px;
+		display: none;
+	}
 
+	/********************************************************************/
+
+	.topinputs {
+		background-color: #ecdfa8; 
+		padding:10px;
+		border-radius:5px;
+	}
 
 
 

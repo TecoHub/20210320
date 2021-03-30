@@ -30,8 +30,6 @@ if(!isset($_SESSION['user_']))
         <!-- start: MAIN CSS -->
 		<link rel="stylesheet" href="../assets/plugins/select2/select2.css">
 		<link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css">
-
-		
         <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../assets/fonts/style.css">
@@ -43,7 +41,7 @@ if(!isset($_SESSION['user_']))
         <link rel="stylesheet" href="../assets/css/theme_orange_black.css" type="text/css" id="skin_color">
         <link rel="stylesheet" href="../assets/css/print.css" type="text/css" media="print"/>
         <link rel="stylesheet" href="../assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="../assets/plugins/DataTables/media/css/DT_bootstrap.css" />
+		<link rel="stylesheet" href="../assets/plugins/DataTables/media/css/DT_bootstrap.css">
         <!--[if IE 7]>
         <link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome-ie7.min.css">
         <![endif]-->
@@ -115,11 +113,11 @@ if(!isset($_SESSION['user_']))
                             </a>
 
                     <ul class="sub-menuI">
-        　　　　　　　　 <li>
-                                <a href="javascript:loadContainer('../works/users.php','Filter student')">
-                                                <span class="title1">担当者を追加/更新する </span>
-                                </a>
-                    　  </li>								
+            　　　　　　　　 <li>
+                                    <a href="javascript:loadContainer('../works/users.php','Filter student')">
+                                                    <span class="title1">担当者を追加/更新する </span>
+                                    </a>
+                        　  </li>								
                     </ul>
 
                 </li> 			
@@ -158,25 +156,25 @@ if(!isset($_SESSION['user_']))
 			
 						<li>
                             <a href="javascript:void(0)"><i class="clip-cog-2"></i>
-                                <span class="title">Settings </span><i class="icon-arrow"></i>
+                                <span class="title">設定</span><i class="icon-arrow"></i>
                                 <span class="selected"></span>
                             </a>
 
                             <ul class="sub-menuI">
                                 <li>
                                          <a href="javascript:loadContainer('../works/discount.php','Filter student')">
-                                                <span class="title1">Set discount</span>
+                                                <span class="title1">割引管理</span>
                                 </a>
                                 </li>    
 
-<li>
+                                <li>
                                          <a href="javascript:loadContainer('../works/seturl.php','set url ')">
-                                                <span class="title1">Set url</span>
+                                                <span class="title1">URL /プリンター管理</span>
                                 </a>
                                 </li>                                  
                            								
                             </ul>
-                </li> 	
+                        </li> 	
 			
 					<?php	
 }elseif($_SESSION['login_type']=="staff"){
@@ -185,6 +183,23 @@ if(!isset($_SESSION['user_']))
 
 	
 <!---------------注文履歴---------------->	
+
+
+                <li>
+                            <a href="javascript:void(0)"><i class="clip-cog-2"></i>
+                                <span class="title">製品管理 </span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+
+                            <ul class="sub-menuI">
+                                <li>
+                                        <a href="javascript:loadContainer('../drinks/drinks_list.php','Filter student')">
+                                                    <span class="title1">製品管理</span>
+                                        </a>
+                                </li>                                  
+                            </ul>
+                </li> 	
+
 				<li>
                             <a href="javascript:void(0)"><i class="clip-cog-2"></i>
                                 <span class="title">注文履歴 </span><i class="icon-arrow"></i>
@@ -260,37 +275,14 @@ if(!isset($_SESSION['user_']))
 
                 <span style="color: #c9ad86;"> ® <script type="text/javascript">
                     document.write(new Date().getFullYear());
-                </script> Niseko Prince Hotel Nagisatei • All Rights Reserved</span>
+                </script> Yunokawa Prince Hotel Nagisatei • All Rights Reserved</span>
            
             <div class="footer-items">
                 <span class="go-top"><i class="clip-chevron-up"></i></span>
             </div>
         </div>
         <!-- end: FOOTER -->
-        <div id="event-management" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h4 class="modal-title">Event Management</h4>
-                    </div>
-                    <div class="modal-body"></div>
-                    <div class="modal-footer">
-                        <button type="button" data-dismiss="modal" class="btn btn-light-grey">
-                            Close
-                        </button>
-                        <button type="button" class="btn btn-danger remove-event no-display">
-                            <i class='fa fa-trash-o'></i> Delete Event
-                        </button>
-                        <button type='submit' class='btn btn-success save-event'>
-                            <i class='fa fa-check'></i> Save
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- start: MAIN JAVASCRIPTS -->
         <!--[if lt IE 9]>
         <script src="../assets/plugins/respond.min.js"></script>
@@ -328,15 +320,14 @@ if(!isset($_SESSION['user_']))
         <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-                <script src="../assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+        <script src="../assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
 		<script src="../assets/plugins/summernote/build/summernote.min.js"></script> 
 		<script src="../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 		<script src="../assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
 		<script src="../assets/plugins/bootstrap-daterangepicker/moment.min.js"></script>
-                <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
+        <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
 		<script src="../assets/plugins/ckeditor/adapters/jquery.js"></script>
-
-                <script src="../assets/js/form-validation.js"></script>
+        <script src="../assets/js/form-validation.js"></script>
 		<script src="../assets/js/form-elements.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 

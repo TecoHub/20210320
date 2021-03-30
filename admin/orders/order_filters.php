@@ -117,7 +117,7 @@ include_once '../common/inc.common.php';
 			$('#next_table').empty();	
 
 					
-		$('#std_table_ajax').append('<tr class="header" width="100%"><th width="3%">SNO</th><th >P Name</th><th >PRICE</th><th>QTY</th><TH>UPDATED</TH><TH>Order No</TH><TH>SEAT NO</TH><TH>ROOMNO</TH><TH>NAME</TH></tr>');	
+		$('#std_table_ajax').append('<tr class="header" width="100%"><th width="3%">Ref.No</th><th >科目名称</th><th >単価</th><th>量</th><TH>日付</TH><TH>注文番号</TH><TH>テーブル番号</TH><TH>部屋番号</TH><TH>お客様の名前</TH></tr>');	
 					
 					for (var i = 0; i < data.length; i++) {
 						
@@ -130,9 +130,9 @@ include_once '../common/inc.common.php';
 	    $('#std_table_ajax').append('<tr width="100%"><td width="3%">'+s_no+'</td><td >' + data[i].productname + '</td><td >' + data[i].productprice + '</td><td >' + data[i].productquantity + '</td><td >' + data[i].updated + '</td><td >' + data[i].or_order_id + '</td><td >' + data[i].tableno+ '</td><td >' + data[i].roomno+ '</td><td >' + data[i].guestname+ '</td></tr>');
 		
  }
- if(foundSomething){$('#next_table').append('<div style="float: left;margin:4px;"><input type="button" name="back" id="back" onclick="back()" class="btn btn-block btn-lg btn-success" value="<back"></div><div style="float: right;margin:4px;"><input type="button" name="next" id="next" onclick="next()" class="btn btn-block btn-lg btn-success" value="next>" ></div>');}
+ if(foundSomething){$('#next_table').append('<div style="float: left;margin:4px;"><input type="button" name="back" id="back" onclick="back()" class="btn btn-block btn-lg btn-success" value="前へ"></div><div style="float: right;margin:4px;"><input type="button" name="next" id="next" onclick="next()" class="btn btn-block btn-lg btn-success" value="次へ" ></div>');}
  
- else{$('#next_table').append('<div style="float: left;margin:4px;"><input type="button" name="back" id="back" onclick="back()" class="btn btn-block btn-lg btn-success" value="<back"></div><div style="float: right;margin:4px;display:none;"><input type="button" name="next" id="next" onclick="next()" class="btn btn-block btn-lg btn-success" value="next>" ></div>');}
+ else{$('#next_table').append('<div style="float: left;margin:4px;"><input type="button" name="back" id="back" onclick="back()" class="btn btn-block btn-lg btn-success" value="前へ"></div><div style="float: right;margin:4px;display:none;"><input type="button" name="next" id="next" onclick="next()" class="btn btn-block btn-lg btn-success" value="次へ" ></div>');}
  
  
 $('#loadingmessage').hide();// hide loading image
@@ -235,9 +235,9 @@ $('#next_table').empty();
 	    $('#std_table_ajax').append('<tr width="100%"><td width="3%">'+s_no+'</td><td >' + data[i].productname + '</td><td >' + data[i].productprice + '</td><td >' + data[i].productquantity + '</td><td >' + data[i].updated + '</td><td >' + data[i].or_order_id + '</td><td >' + data[i].tableno+ '</td><td >' + data[i].roomno+ '</td><td >' + data[i].guestname+ '</td></tr>');
 		
  }
- if(foundSomething){$('#next_table').append('<div style="float: left;margin:4px;"><input type="button" name="back" id="back" onclick="back()" class="btn btn-block btn-lg btn-success" value="<back"></div><div style="float: right;margin:4px;"><input type="button" name="next" id="next" onclick="next()" class="btn btn-block btn-lg btn-success" value="next>" ></div>');}
+ if(foundSomething){$('#next_table').append('<div style="float: left;margin:4px;"><input type="button" name="back" id="back" onclick="back()" class="btn btn-block btn-lg btn-success" value="前へ"></div><div style="float: right;margin:4px;"><input type="button" name="next" id="next" onclick="next()" class="btn btn-block btn-lg btn-success" value="次へ" ></div>');}
  
- else{$('#next_table').append('<div style="float: left;margin:4px;"><input type="button" name="back" id="back" onclick="back()" class="btn btn-block btn-lg btn-success" value="<back"></div><div style="float: right;margin:4px;display:none;"><input type="button" name="next" id="next" onclick="next()" class="btn btn-block btn-lg btn-success" value="next>" ></div>');}
+ else{$('#next_table').append('<div style="float: left;margin:4px;"><input type="button" name="back" id="back" onclick="back()" class="btn btn-block btn-lg btn-success" value="前へ"></div><div style="float: right;margin:4px;display:none;"><input type="button" name="next" id="next" onclick="next()" class="btn btn-block btn-lg btn-success" value="次へ" ></div>');}
  
  
 $('#loadingmessage').hide();// hide loading image
@@ -299,7 +299,7 @@ function select_callll(name,value){
 	formblock= document.getElementById('form_id');
   forminputs = formblock.getElementsByTagName('input');
   if (value == "Check All"){
-	//alert("kgjkg"+value);
+
 	for (i = 0; i < forminputs.length; i++) {
 		var regex = new RegExp(name, "i");
     if (regex.test(forminputs[i].getAttribute('name')))
@@ -333,6 +333,7 @@ else{
 }
 	
 </script>
+
 </head>
 <body >
 <style>
@@ -372,8 +373,27 @@ else{
 	   margin-bottom: 60px;
    }
    #topcategorieslink  {
-	   margin-bottom: 50px;
+	   margin-bottom: 25px;
    }
+
+   input {
+
+	   
+	   height:50px;
+	   margin: 15px 0 2px 30px;
+   }
+
+   select {
+	   
+	   width: 100px;
+	   margin: 15px 0 2px 30px;
+   }
+
+   .cubestyle {
+	 width:  70px;
+	 height: 70px;
+	 margin: inherit;
+}
 
 
 </style>
@@ -382,14 +402,16 @@ else{
 
 
 	<div id="topcategorieslink" >
-      <h1>Orders</h1>
+	  <h1>注文</h1>
+	  
+	  <h3 style="text-align: center;">表示</h3>
 	
 			<div>
 						<label for="size">
-									<strong> Size </strong>
+									<strong> 示す </strong>
 						</label>
 						
-						<select name="tb_size" id="tb_size" onchange="onchangee()">
+						<select style="background-color: blanchedalmond;" name="tb_size" id="tb_size" onchange="onchangee()">
 							<option value="2">2</option>
 							<option value="10">10</option>
 							<option value="25">25</option>
@@ -400,30 +422,28 @@ else{
 			</div>
 
 
-
-
-
 				<div>
+					
+					<strong>日付</strong>
 					<input type="date" id="ordate" name="ordate" onchange="onchangee()">
+					
 				</div>
 
 
-
 				<div>
-					<label for="size">
-					<strong> Search </strong>
-					</label>
-					<input style=" width:200px;" class="form-control" type="text" id="search" placeholder="Name or Order ID" onkeyup="onchangee()">
+				
+					<strong> 探索 </strong>
+					<input style="width:250px;"  type="text" id="search" placeholder="お客様の名前またわ注文番号" onkeyup="onchangee()">
 					
 				</div>
 
 				<div style="margin-top: 20px;">
-				<input type="button" onclick="loadContainer('../orders/order_filters.php')" value='refresh' class="refresh-btn"/> 
-				<button onclick="window.print()">印刷</button>
+				<input type="button" class="cubestyle" onclick="loadContainer('../orders/order_filters.php')" value='refresh' class="refresh-btn"/> 
+				<button class="cubestyle" onclick="window.print()">印刷</button>
 				</div>
 	  </div>
 
-	  
+	
       <div>
 					<form  id="form_id" action="#" method="post" enctype="multipart/form-data">
 

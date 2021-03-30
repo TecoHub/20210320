@@ -54,11 +54,11 @@ $dataarr = $Cobj->getDataRawObj($tableName, $cond);
 function delet(id){
 
 
-		var r = confirm("Please Confirm");
+		var r = confirm("選択したアカウントを削除しますか");
 	 
 		if (r == true) {
 			$.ajax({
-			url: "../works/can_size.php", // Url to which the request is send
+			url: "../works/user_size_can.php", // Url to which the request is send
 			type: "POST",        
 			data:"id="+id+"&mode=delete",
 				 dataType: "json",
@@ -66,10 +66,10 @@ function delet(id){
 				  success: function(data){
 					 // alert(data);
 					  if(data=="deleted"){
-						  alert("deleted sucessfully");
+						  alert("エラー：削除されていません");
 						  }
 					  else{
-						  alert("DELETED SUCESSFULLY");
+						  alert("正常に削除されました");
 						  //location.reload();
 						  	loadContainer('../works/users.php');
 					  }
@@ -101,13 +101,6 @@ $("#sub_cat").html( html );
 </script>
 
 
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ja" class="no-js">
 	<!--<![endif]-->
@@ -129,7 +122,23 @@ $("#sub_cat").html( html );
 			<style>
 			.has-error{ border: 1px solid rgb(213, 61, 61) !important; background: #FFF4F4 !important;}
 			.has-success{ border: 1px solid #239E08 !important; background: #E1FFE1 !important; }
-		
+
+			.cubestyle { 
+					width:  70px;
+					height: 70px;
+					margin: inherit;
+              }
+
+			  input {
+				  margin: 2px 0 2px 20px;
+				  
+			  }
+
+			  select {
+				  margin: 2px 0 2px 20px;
+				  height: 30px;
+				  background-color: bisque;
+			  }
 			</style>
 	</head>
 
@@ -138,9 +147,9 @@ $("#sub_cat").html( html );
 			<form action="clients/addStudentInfo.php" name="contactForm1"  id="contactForm1" method="POST" style="margin-left:2%">
 
 				<div id="main">
-				<h1>Staff</h1>
+				<h1>担当者</h1>
 
-					<h3 style="text-align: center;">追加</h3>
+					<h3 style="text-align: center;">管理</h3>
 
 					<table>
 
@@ -154,14 +163,19 @@ $("#sub_cat").html( html );
 						<td><input type="text" name="s_name" id="s_name" size="30" value="<?php echo$dataarr[0]['s_name'] ?>" required></td>
 					</tr> 
 
-
-					<tr>
-						<td> 電話番号</td> 
-						<td><input type="text" name="s_mobile" id="s_mobile" size="30" value="<?php echo$dataarr[0]['s_mobile'] ?>" required></td>
-					</tr>
 					<tr>
 						<td> パスワード </td> 
 						<td><input type="password" name="password" id="password" size="30" value="<?php echo$dataarr[0]['password'] ?>" required> </td>
+					</tr>
+
+					<tr>
+						<td>ログインタイプ</td> 
+
+					 <td>	
+						 <select name="login_type" id="login_type">
+					        	 <option value="staff" <?php if($dataarr[0]['login_type']=="staff"){echo"selected";} ?>> Staff</option>
+								<option value="admin" <?php if($dataarr[0]['login_type']=="admin"){echo"selected";} ?>> Admin</option>	
+						</select></td>
 					</tr>
 
 
@@ -175,8 +189,8 @@ $("#sub_cat").html( html );
 					</table>
 
 							<div style="margin-top:20px;">
-								<input type="submit" value="Submit Form" />
-								<input type="button" onclick="loadContainer('../works/users.php')" value='refresh' class="refresh-btn"/>
+								<input class="cubestyle" type="submit" value="登録" />
+								<input class="cubestyle" type="button" onclick="loadContainer('../works/users.php')" value='refresh' class="refresh-btn"/>
 							</div>
 			</form>
 
@@ -186,7 +200,7 @@ $("#sub_cat").html( html );
 		
 				<table cellpadding="2px" cellspacing="2px"  width="90%" height="5px" style="background: whitesmoke;">
 				
-				<tr style="background:#76BAC5; font-size:16px;"><th style="padding-left:20px;">Ref.No </th><th>ユーザーCD</th><th>氏名</th><th>電話番号</th> <th> <th>変更</th><th>削除</th> </th></tr>
+				<tr style="background:#76BAC5; font-size:16px;"><th style="padding-left:20px;">Ref.No </th><th>ユーザーCD</th><th>氏名</th><th>ログインタイプ</th> <th> <th>変更</th><th>削除</th> </th></tr>
 				
 											<?php
 											
@@ -206,7 +220,7 @@ $("#sub_cat").html( html );
 												echo "<td  style='padding-left:20px;'>".$sno ."  </td>";
 												echo "<td>".$class_array[$i]['s_empid']."  </td>";
 												echo "<td>".$class_array[$i]['s_name']."  </td>";
-												echo "<td>".$class_array[$i]['s_mobile']."  </td>";
+												echo "<td>".$class_array[$i]['login_type']."  </td>";
 
 												echo "<td style='float:right;'>
 											

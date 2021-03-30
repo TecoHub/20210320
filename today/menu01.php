@@ -7,7 +7,6 @@ include 'common/inc.common.php';
 $sql="select * from drinks order by menus,position";
  $dataarr = $Cobj->union($sql);
 
-
 //sited down
 //header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 //header("Cache-Control: post-check=0, pre-check=0", false);
@@ -176,24 +175,25 @@ $selectguest=$_SESSION['guestname'];
                                                                         <div class="form-group">
 
                                                                                 <div class="input-group">
-                                                                                <?php
+                                                                                              <?php
 																						 
-if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
- if($dataarr[$t]['price']>0){
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
-echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
-                                                                  } else{
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
-echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                     if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
+																				if($dataarr[$t]['price']>0){
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
+										echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                                          } else{
+																									
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
+										echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
 
-              }
-   
-   
-   }
-   else{
+																										  }
+																					 
+																					 
+																					 }
+																					 else{
 ?>																						 
 
-                                                                                              <select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
+																							<select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
                                                                                                       <?php 
                                                                                                           if($dataarr[$t]['price']>0){
                                                                                                           echo "<option value=".$bl.">  ".$dataarr[$t]['bot_name']."
@@ -204,10 +204,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                                                                 </option>";
                                                                                                           }
                                                                                                       ?>
-
+																									  
                                                                                               </select>
 
-                                                                                              <?php
+																							  <?php
 																							  }
 																							  ?>
                                                                                 </div>
@@ -215,16 +215,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                              <div class="element">
-                                                                                      <button class="buttonquantity button-minus">
-                                                                                          <img src="images/left-arrow.png" alt="">
-                                                                                      </button>
-                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-                                                                                      <button class="buttonquantity button-plus">
-                                                                                         <img src="images/right-arrow.png" alt="">
-                                                                                      </button>
-                                                                              </div>
-                                                                      </div> 
+                                                                                  
+                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1" min="1" max="20">  
+
+                                                                      </div>
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -263,9 +257,7 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
       <!-- 日本酒　。焼酎 -->
         <div id="menu02" class="tabcontent" style="display: none;">
            <img style="width: 384px; height:auto;" src="images/cutout/Menu02.png" alt="" usemap="#m02">
-
-
-                              <?php
+           <?php
                                       for($t=0;$t<sizeof($dataarr);$t++){
                                       if($dataarr[$t]['menus']==2){
                                       $bl=$dataarr[$t]['CD1']."-".$dataarr[$t]['CD2']."-".$dataarr[$t]['price'];
@@ -295,25 +287,25 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                         <div class="form-group">
 
                                                                                 <div class="input-group">
-                                                                                <?php
+                                                                                               <?php
 																						 
-                                             if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
-if($dataarr[$t]['price']>0){
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
-echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
-                                                                  } else{
-          
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
-echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                     if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
+																				if($dataarr[$t]['price']>0){
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
+										echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                                          } else{
+																									
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
+										echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
 
-              }
-   
-   
-   }
-   else{
+																										  }
+																					 
+																					 
+																					 }
+																					 else{
 ?>																						 
 
-                                                                                              <select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
+																							<select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
                                                                                                       <?php 
                                                                                                           if($dataarr[$t]['price']>0){
                                                                                                           echo "<option value=".$bl.">  ".$dataarr[$t]['bot_name']."
@@ -324,27 +316,20 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                                                                 </option>";
                                                                                                           }
                                                                                                       ?>
-                                                                                                      
+																									  
                                                                                               </select>
 
-                                                                                              <?php
+																							  <?php
 																							  }
-																							  ?>                                                   
-                                                                                </div>
+																							  ?>                                                                                </div>
                                                                         </div>
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                              <div class="element">
-                                                                                      <button class="buttonquantity button-minus">
-                                                                                          <img src="images/left-arrow.png" alt="">
-                                                                                      </button>
-                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-                                                                                      <button class="buttonquantity button-plus">
-                                                                                         <img src="images/right-arrow.png" alt="">
-                                                                                      </button>
-                                                                              </div>
-                                                                      </div> 
+                                                                                  
+                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1" min="1" max="20">  
+
+                                                                      </div>
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -378,15 +363,12 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                               ?>
 
         </div>
-
         
 <!----------------------------------Menu Items 3--------------------------------->
       <!--ビール　。ウイスキー　-->  
         <div id="menu03" class="tabcontent" style="display: none;">
            <img style="width: 384px; height:auto" src="images/cutout/Menu03.png" alt="" usemap="#m03">
-
-
-                              <?php
+           <?php
                                       for($t=0;$t<sizeof($dataarr);$t++){
                                       if($dataarr[$t]['menus']==3){
                                       $bl=$dataarr[$t]['CD1']."-".$dataarr[$t]['CD2']."-".$dataarr[$t]['price'];
@@ -416,25 +398,25 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                         <div class="form-group">
 
                                                                                 <div class="input-group">
-                                                                                <?php
+                                                                                         <?php
 																						 
-                                             if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
-if($dataarr[$t]['price']>0){
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
-echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
-                                                                  } else{
-          
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
-echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                     if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
+																				if($dataarr[$t]['price']>0){
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
+										echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                                          } else{
+																									
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
+										echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
 
-              }
-   
-   
-   }
-   else{
+																										  }
+																					 
+																					 
+																					 }
+																					 else{
 ?>																						 
 
-                                                                                              <select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
+																							<select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
                                                                                                       <?php 
                                                                                                           if($dataarr[$t]['price']>0){
                                                                                                           echo "<option value=".$bl.">  ".$dataarr[$t]['bot_name']."
@@ -445,10 +427,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                                                                 </option>";
                                                                                                           }
                                                                                                       ?>
-                                                                                                      
+																									  
                                                                                               </select>
 
-                                                                                              <?php
+																							  <?php
 																							  }
 																							  ?>
                                                                                 </div>
@@ -456,16 +438,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                              <div class="element">
-                                                                                      <button class="buttonquantity button-minus">
-                                                                                          <img src="images/left-arrow.png" alt="">
-                                                                                      </button>
-                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-                                                                                      <button class="buttonquantity button-plus">
-                                                                                         <img src="images/right-arrow.png" alt="">
-                                                                                      </button>
-                                                                              </div>
-                                                                      </div> 
+                                                                                  
+                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1" min="1" max="20">  
+
+                                                                      </div>
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -504,8 +480,6 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
       <!-- サワー　。　果実酒　-->
         <div id="menu04" class="tabcontent" style="display: none;">
            <img style="width: 384px; height:auto" src="images/cutout/Menu04.png" alt="" usemap="#m04">
-
-
            <?php
                                       for($t=0;$t<sizeof($dataarr);$t++){
                                       if($dataarr[$t]['menus']==4){
@@ -536,25 +510,25 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                         <div class="form-group">
 
                                                                                 <div class="input-group">
-                                                                                <?php
+                                                                                              <?php
 																						 
-                                             if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
-if($dataarr[$t]['price']>0){
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
-echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
-                                                                  } else{
-          
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
-echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                     if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
+																				if($dataarr[$t]['price']>0){
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
+										echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                                          } else{
+																									
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
+										echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
 
-              }
-   
-   
-   }
-   else{
+																										  }
+																					 
+																					 
+																					 }
+																					 else{
 ?>																						 
 
-                                                                                              <select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
+																							<select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
                                                                                                       <?php 
                                                                                                           if($dataarr[$t]['price']>0){
                                                                                                           echo "<option value=".$bl.">  ".$dataarr[$t]['bot_name']."
@@ -565,10 +539,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                                                                 </option>";
                                                                                                           }
                                                                                                       ?>
-                                                                                                      
+																									  
                                                                                               </select>
 
-                                                                                              <?php
+																							  <?php
 																							  }
 																							  ?>
                                                                                 </div>
@@ -576,16 +550,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                              <div class="element">
-                                                                                      <button class="buttonquantity button-minus">
-                                                                                          <img src="images/left-arrow.png" alt="">
-                                                                                      </button>
-                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-                                                                                      <button class="buttonquantity button-plus">
-                                                                                         <img src="images/right-arrow.png" alt="">
-                                                                                      </button>
-                                                                              </div>
-                                                                      </div> 
+                                                                                  
+                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1" min="1" max="20">  
+
+                                                                      </div>
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -619,14 +587,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                               ?>
 
         </div>
-
-
 <!----------------------------------Menu Items 5--------------------------------->
       <!--ワイン-->
         <div id="menu05" class="tabcontent" style="display: none;">
            <img style="width: 384px; height:auto" src="images/cutout/Menu05.png" alt="" usemap="#m05">
-
-
            <?php
                                       for($t=0;$t<sizeof($dataarr);$t++){
                                       if($dataarr[$t]['menus']==5){
@@ -657,25 +621,25 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                         <div class="form-group">
 
                                                                                 <div class="input-group">
-                                                                                <?php
+                                                                                               <?php
 																						 
-                                             if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
-if($dataarr[$t]['price']>0){
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
-echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
-                                                                  } else{
-          
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
-echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                     if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
+																				if($dataarr[$t]['price']>0){
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
+										echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                                          } else{
+																									
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
+										echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
 
-              }
-   
-   
-   }
-   else{
+																										  }
+																					 
+																					 
+																					 }
+																					 else{
 ?>																						 
 
-                                                                                              <select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
+																							<select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
                                                                                                       <?php 
                                                                                                           if($dataarr[$t]['price']>0){
                                                                                                           echo "<option value=".$bl.">  ".$dataarr[$t]['bot_name']."
@@ -686,10 +650,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                                                                 </option>";
                                                                                                           }
                                                                                                       ?>
-                                                                                                      
+																									  
                                                                                               </select>
 
-                                                                                              <?php
+																							  <?php
 																							  }
 																							  ?>
                                                                                 </div>
@@ -697,16 +661,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                              <div class="element">
-                                                                                      <button class="buttonquantity button-minus">
-                                                                                          <img src="images/left-arrow.png" alt="">
-                                                                                      </button>
-                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-                                                                                      <button class="buttonquantity button-plus">
-                                                                                         <img src="images/right-arrow.png" alt="">
-                                                                                      </button>
-                                                                              </div>
-                                                                      </div> 
+                                                                                  
+                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1" min="1" max="20">  
+
+                                                                      </div>
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -741,14 +699,12 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
 
         </div>
 
-
 <!----------------------------------Menu Items 6--------------------------------->
       <!--ソフトドリンク-->
         <div id="menu06" class="tabcontent" style="display: none;">
            <img style="width: 384px; height:auto" src="images/cutout/Menu06.png" alt="" usemap="#m06">
-
         
-                              <?php
+           <?php
                                       for($t=0;$t<sizeof($dataarr);$t++){
                                       if($dataarr[$t]['menus']==6){
                                       $bl=$dataarr[$t]['CD1']."-".$dataarr[$t]['CD2']."-".$dataarr[$t]['price'];
@@ -772,31 +728,31 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
 
 
                                                           <div class="modal-body" >
-                                                                    <img style='width: 100%; height:auto;margin-bottom:50px' src='admin/drinks/upload/<?php echo $dataarr[$t]['productimage'];?>'>
+                                                                    <img style='width: 100%; height:auto;' src='admin/drinks/upload/<?php echo $dataarr[$t]['productimage'];?>'>
                                                                        
 
                                                                         <div class="form-group">
 
                                                                                 <div class="input-group">
-                                                                                <?php
+                                                                                               <?php
 																						 
-                                             if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
-if($dataarr[$t]['price']>0){
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
-echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
-                                                                  } else{
-          
-echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
-echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                     if($dataarr[$t]['price']<=0 || $dataarr[$t]['glass_price']<=0){
+																				if($dataarr[$t]['price']>0){
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['bot_name']."' readonly>";
+										echo "<input hidden type='text' value='".$bl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
+                                                                                                          } else{
+																									
+										echo "<input type='text' class=' select_mate2 form-control chosen-select' tabindex='2' name='' value='".$dataarr[$t]['gla_name']."' readonly>";
+										echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$t]['d_refid']."'>";
 
-              }
-   
-   
-   }
-   else{
+																										  }
+																					 
+																					 
+																					 }
+																					 else{
 ?>																						 
 
-                                                                                              <select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
+																							<select name="price" id="prc<?php echo $dataarr[$t]['d_refid'];?>"  class=" select_mate2 form-control chosen-select"  tabindex="2">
                                                                                                       <?php 
                                                                                                           if($dataarr[$t]['price']>0){
                                                                                                           echo "<option value=".$bl.">  ".$dataarr[$t]['bot_name']."
@@ -807,10 +763,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                                                                 </option>";
                                                                                                           }
                                                                                                       ?>
-                                                                                                      
+																									  
                                                                                               </select>
 
-                                                                                              <?php
+																							  <?php
 																							  }
 																							  ?>
                                                                                 </div>
@@ -818,16 +774,10 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                                                                           
                                                                       <div class="form-group">
                                                                               <label for="contact-name" class=" control-label">Quantity</label>
-                                                                              <div class="element">
-                                                                                      <button class="buttonquantity button-minus">
-                                                                                          <img src="images/left-arrow.png" alt="">
-                                                                                      </button>
-                                                                                  <input type="number" style="margin-top: 2px;" class="quantity-field"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
-                                                                                      <button class="buttonquantity button-plus">
-                                                                                         <img src="images/right-arrow.png" alt="">
-                                                                                      </button>
-                                                                              </div>
-                                                                      </div> 
+                                                                                  
+                                                                                  <input type="number" style="margin-top: 2px;" class="form-control select_mate2"  placeholder="qty" name="qty"  id="qty<?php echo $dataarr[$t]['d_refid'];?>" value="1">  
+
+                                                                      </div>
 
                                                                           <div class="form-group">
                                                                                     <div class="input-group">
@@ -861,8 +811,6 @@ echo "<input hidden type='text' value='".$gl."' name='price' id='prc".$dataarr[$
                               ?>
 
         </div>
-
-
         <!----------------------------------Menu Items end--------------------------------->
 
   </div>

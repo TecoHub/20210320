@@ -12,9 +12,11 @@ $sql="select * from discount where active=1";
 //header("Cache-Control: post-check=0, pre-check=0", false);
 //header("Pragma: no-cache");
 
+//if(isset($_GET['r'])){
 $r=$_GET['r'];
 $_SESSION['r']= $r;
-                $api = "http://rest.yunokawapn.co.jp/res_t/get_dec.pl?r=$r";
+
+$api = "http://rest.yunokawapn.co.jp/res_t/get_dec.pl?r=$r";
                 $request = curl_init($api); // initiate curl object
                 curl_setopt($request, CURLOPT_HEADER, 0); // set to 0 to eliminate header info from response
                 curl_setopt($request, CURLOPT_RETURNTRANSFER, 1); // Returns response data instead of TRUE(1)
@@ -26,11 +28,11 @@ $_SESSION['r']= $r;
                 curl_close($request); // close curl object
 
                 $result = json_decode($response, true); // true turns it into an array
-                //print_r($response);               
+//print_r($response);               
 			   //print $result; //to check variables
-								//$response="12:333:vicky";
+								$response="12:333:vicky";
 
-			//$response="12:333,555,666:vi,me,ra"; 
+			$response="12:333,555,666:vi,me,ra"; 
                 list($tableno, $roomno, $guestname) = explode(":" , $response);
 //print_r($roomno);			
 $tablenoarr=explode("," , $tableno);
@@ -38,6 +40,8 @@ $roomnoarr=explode("," , $roomno);
 $guestnamearr=explode("," , $guestname);
  $size=sizeof($roomnoarr);
 
+//}
+                
 // $size=sizeof($tablenoarr);
 
  if($size>1){
@@ -108,7 +112,7 @@ else{}
        
        <div>
            <form action="menu01.php">
-           <input type="text" name="rnew" value="<?php echo $r; ?>" hidden id="rnew">
+		   <input type="text" name="rnew" value="<?php echo $r; ?>" hidden id="rnew">
              <select class="select_mate " name="roomname" onclick="return false;" id="roomname">
                 <option value=""  >お部屋番号を選択 </option>
                 
